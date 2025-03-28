@@ -1,7 +1,3 @@
-month = input('Введите месяц рождения - ')
-day = float(input('Введите дату рождения - '))
-
-    # Функция для проверки максимального числа в месяце
 def is_valid_date(month, day):
     month_days = {
         'январь': 31,
@@ -20,19 +16,14 @@ def is_valid_date(month, day):
     if month not in month_days:
         return False
     return 1 <= day <= month_days[month]
-
-
 while True:
     month = input("Введите месяц: ").lower().strip()
     day = int(input("Введите число: "))
     
     if not is_valid_date(month, day):
         print("Ошибка: такой даты не существует! Попробуйте ещё раз.")
-        continue
-    
+        continue    
     break 
-
-
 if (month == "март" and day >= 21) or (month == "апрель" and day <= 20):
     print ('Овен')
 elif (month == "апрель" and day >= 21) or (month == "май" and day <= 21):
